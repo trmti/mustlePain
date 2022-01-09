@@ -3,9 +3,9 @@ import liff from '@line/liff';
 import { db, setTrainDay, setTrainTime } from './firebase';
 
 document.getElementById('btn-submit').addEventListener('click', () => {
-  liff.closeWindow();
   checkboxes = document.getElementsByClassName('trainingDay-checkbox');
   const groupId = liff.getContext().groupId;
+  liff.closeWindow();
   const trainDays = checkboxes.map((checkbox) => checkbox.checked === true);
   setTrainDay(db, groupId, trainDays);
   setTrainTime(db, groupId, document.time.value);
