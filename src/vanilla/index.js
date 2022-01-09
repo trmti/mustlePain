@@ -13,6 +13,7 @@ document.getElementById('btn-submit').addEventListener('click', () => {
   );
   setTrainDay(db, groupId, trainDays);
   setTrainTime(db, groupId, document.getElementById('input-time').value);
+  document.getElementById('debug').innerText = groupId + ' ' + trainDays;
 });
 
 document.addEventListener('DOMContentLoaded', function () {
