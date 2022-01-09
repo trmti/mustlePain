@@ -6,7 +6,9 @@ document.getElementById('btn-submit').addEventListener('click', () => {
   console.log('ikko');
   const checkboxes = document.getElementsByClassName('trainingDay-checkbox');
   const groupId = liff.getContext().groupId;
-  const trainDays = checkboxes.filter((checkbox) => checkbox.checked === true);
+  const trainDays = Array.from(checkboxes).filter(
+    (checkbox) => checkbox.checked === true
+  );
   setTrainDay(db, groupId, trainDays);
   setTrainTime(db, groupId, document.getElementById('input-time').value);
   liff.closeWindow();
