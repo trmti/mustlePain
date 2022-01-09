@@ -31,13 +31,13 @@ export async function getGroup(db) {
   return groupList;
 }
 
-export async function setTrainigDay(db, groupId, trainDayArray) {
+export async function setTrainDay(db, groupId, trainDayArray) {
   await setDoc(doc(db, 'group', groupId), {
     TrainingDay: trainDayArray,
   });
 }
 
-export async function setTrainingTime(db, groupId, trainTime) {
+export async function setTrainTime(db, groupId, trainTime) {
   await setDoc(doc(db, 'group', groupId), {
     TrainTime: trainTime,
   });

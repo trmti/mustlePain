@@ -1,16 +1,13 @@
 import './index.css';
 import liff from '@line/liff';
-import { db, setTrainigDay, setTrainingTime } from './firebase';
-
-liff.closeWindow();
+import { db, setTrainDay, setTrainTime } from './firebase';
 
 document.getElementById('btn-submit').addEventListener('click', () => {
   checkboxes = document.getElementsByClassName('trainingDay-checkbox');
   const groupId = liff.getContext().groupId;
-  console.log(groupId);
   const trainDays = checkboxes.map((checkbox) => checkbox.checked === true);
-  setTrainigDay(db, groupId, trainDays);
-  setTrainingTime(db, groupId, document.time.value);
+  setTrainDay(db, groupId, trainDays);
+  setTrainTime(db, groupId, document.time.value);
   liff.closeWindow();
 });
 
