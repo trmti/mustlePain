@@ -40,6 +40,8 @@ const commonConfig = {
             loader: 'css-loader',
             options: {
               url: false,
+              miinimize: true,
+              sourceMap: true,
             },
           },
         ],
