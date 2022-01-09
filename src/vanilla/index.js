@@ -17,11 +17,11 @@ document.getElementById('btn-submit').addEventListener('click', () => {
       {
         type: 'text',
         text:
-          '絶対に' +
+          '@筋トレくん 絶対に' +
           trainDaysVal.join(',') +
           'の' +
           trainTime +
-          'から筋トレする！！',
+          'から筋トレする！！\nこれから一緒に頑張ろう！！',
       },
     ])
     .catch((err) => {
