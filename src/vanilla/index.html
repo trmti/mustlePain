@@ -8,53 +8,39 @@
     <title>Ikko</title>
   </head>
   <body>
-    <div class="home">
-      <h1 class="home__title">
-        Welcome to <br /><a
-          class="home__title__link"
-          href="https://developers.line.biz/en/docs/liff/overview/"
-          >LIFF Starter!</a
-        >
-      </h1>
-      <div class="home__badges">
-        <span class="home__badges__badge badge--primary"> LIFF Starter </span>
-        <span class="home__badges__badge badge--secondary"> vanilla </span>
-        <span class="home__badges__badge badge--tertiary"> 0.1.0 </span>
-        <a
-          href="https://github.com/line/line-liff-v2-starter"
-          target="_blank"
-          rel="noreferrer"
-          class="home__badges__badge badge--secondary"
-        >
-          GitHub
-        </a>
-      </div>
-      <div class="home__buttons">
-        <a
-          href="https://developers.line.biz/en/docs/liff/developing-liff-apps/"
-          target="_blank"
-          rel="noreferrer"
-          class="home__buttons__button button--primary"
-        >
-          LIFF Documentation
-        </a>
-        <a
-          href="https://liff-playground.netlify.app/"
-          target="_blank"
-          rel="noreferrer"
-          class="home__buttons__button button--tertiary"
-        >
-          LIFF Playground
-        </a>
-        <a
-          href="https://developers.line.biz/console/"
-          target="_blank"
-          rel="noreferrer"
-          class="home__buttons__button button--secondary"
-        >
-          LINE Developers Console
-        </a>
-      </div>
+    <div id="container">
+      <form action="" id="form">
+        <div class="title-container">
+          <h1 class="title" id="title-trainingDay">筋トレやる日</h1>
+        </div>
+
+        <div id="trainingDay-container">
+          <input type="checkbox" class="trainingDay-checkbox" id="Day1" />
+          <label for="Day1" class="trainingDay-label">日</label>
+          <input type="checkbox" class="trainingDay-checkbox" id="Day2" />
+          <label for="Day2" class="trainingDay-label">月</label>
+          <input type="checkbox" class="trainingDay-checkbox" id="Day3" />
+          <label for="Day3" class="trainingDay-label">火</label>
+          <input type="checkbox" class="trainingDay-checkbox" id="Day4" />
+          <label for="Day4" class="trainingDay-label">水</label>
+          <input type="checkbox" class="trainingDay-checkbox" id="Day5" />
+          <label for="Day5" class="trainingDay-label">木</label>
+          <input type="checkbox" class="trainingDay-checkbox" id="Day6" />
+          <label for="Day6" class="trainingDay-label">金</label>
+          <input type="checkbox" class="trainingDay-checkbox" id="Day7" />
+          <label for="Day7" class="trainingDay-label">土</label>
+        </div>
+
+        <div class="title-container">
+          <h1 class="title" id="title-trainingTime">時間</h1>
+        </div>
+
+        <div class="training-time-container">
+          <input type="time" name="time" value="21:00" step="900" required />
+        </div>
+
+        <button type="submit" id="btn-submit">提出</button>
+      </form>
     </div>
   </body>
 </html>
