@@ -8,7 +8,7 @@ document.getElementById('btn-submit').addEventListener('click', () => {
   const groupId = liff.getContext().groupId;
   const trainDays = checkboxes.filter((checkbox) => checkbox.checked === true);
   setTrainDay(db, groupId, trainDays);
-  setTrainTime(db, groupId, document.getElementById('input-time'));
+  setTrainTime(db, groupId, document.getElementById('input-time').value);
   liff.closeWindow();
 });
 
