@@ -38,9 +38,6 @@ const commonConfig = {
           env === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: {
-              url: false,
-            },
           },
         ],
       },
