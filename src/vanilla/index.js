@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
   liff
     .init({ liffId: process.env.LIFF_ID })
     .then(() => {
-      console.log('Success! you can do something with LIFF API here.');
+      const userId = liff.getContext().userId;
+      document.getElementById('user-id').innerText = userId;
     })
     .catch((error) => {
       console.log(error);
