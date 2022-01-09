@@ -12,5 +12,8 @@
   ],
   "devDependencies": {
     "url-loader": "^4.1.1"
+  },
+  "dependencies": {
+    "firebase": "^9.6.2"
   }
 }
