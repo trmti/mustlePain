@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const userId = liff.getContext();
       console.log(userId);
       console.log(liff.isLoggedIn());
+      document.getElementById('user-id').innerHTML = liff.isLoggedIn();
     })
     .catch((error) => {
       console.log(error);
