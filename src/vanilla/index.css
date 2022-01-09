@@ -6,7 +6,6 @@ body {
   padding: 0;
 }
 body {
-  background-image: image-url('./maccho.jpg');
   background-size: cover;
   background-position: 80% center;
 }
