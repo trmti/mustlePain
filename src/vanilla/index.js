@@ -1,8 +1,9 @@
 import './index.css';
 import liff from '@line/liff';
-import { db, getGroup } from 'firebase';
+import { db, getGroup } from './firebase';
 
-group = await getGroup(db);
+const group = getGroup(db);
+console.log(group);
 
 document.addEventListener('DOMContentLoaded', function () {
   liff
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       const userId = liff.getContext().userId;
       console.log(userId);
-      document.getElementById('firestore').innerHTML = group[0].userIDs[0];
+      document.getElementById('firestore').innerHTML = 'test';
     })
     .catch((error) => {
       console.log(error);
