@@ -41,15 +41,6 @@ const commonConfig = {
           },
         ],
       },
-      {
-        test: /\.(jpg|png|gif|woff|eot|ttf|svg)/,
-        use: {
-          loader: 'url-loader', // this need file-loader
-          options: {
-            limit: 50000,
-          },
-        },
-      },
     ],
   },
 
@@ -72,8 +63,17 @@ const vanillaConfig = merge(commonConfig, {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
     publicPath: '/',
+    assetModuleFilename: 'images/[name][ext]',
   },
   plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
+  module: {
+    rules: [
+      {
+        test: /\.(ico|svg|jpe?g|png|webp)$/,
+        type: 'asset/inline',
+      },
+    ],
+  },
 });
 
 // TODO: Add entries for other implementations.
