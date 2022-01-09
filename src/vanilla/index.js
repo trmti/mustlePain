@@ -5,10 +5,10 @@ import { db, setTrainDay, setTrainTime } from './firebase';
 document.getElementById('btn-submit').addEventListener('click', () => {
   checkboxes = document.getElementsByClassName('trainingDay-checkbox');
   const groupId = liff.getContext().groupId;
-  liff.closeWindow();
-  const trainDays = checkboxes.map((checkbox) => checkbox.checked === true);
+  const trainDays = checkboxes.filter((checkbox) => checkbox.checked === true);
   setTrainDay(db, groupId, trainDays);
-  setTrainTime(db, groupId, document.time.value);
+  setTrainTime(db, groupId, document.getElementById('input-time'));
+  liff.closeWindow();
 });
 
 document.addEventListener('DOMContentLoaded', function () {
