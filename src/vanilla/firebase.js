@@ -1,6 +1,12 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
+  setDoc,
+} from 'firebase/firestore/lite';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -23,4 +29,16 @@ export async function getGroup(db) {
   const groupSnapshot = await getDocs(groupCol);
   const groupList = groupSnapshot.docs.map((doc) => doc.data());
   return groupList;
+}
+
+export async function setTrainigDay(db, groupId, trainDayArray) {
+  await setDoc(doc(db, 'group', groupId), {
+    TrainingDay: trainDayArray,
+  });
+}
+
+export async function setTrainingTime(db, groupId, trainTime) {
+  await setDoc(doc(db, 'group', groupId), {
+    TrainTime: trainTime,
+  });
 }
