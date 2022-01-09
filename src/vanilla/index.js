@@ -5,6 +5,7 @@ import { db, setTrainigDay, setTrainingTime } from './firebase';
 document.getElementById('btn-submit').addEventListener('click', () => {
   checkboxes = document.getElementsByClassName('trainingDay-checkbox');
   const groupId = liff.getContext().groupId;
+  console.log(groupId);
   const trainDays = checkboxes.map((checkbox) => checkbox.checked === true);
   setTrainigDay(db, groupId, trainDays);
   setTrainingTime(db, groupId, document.time.value);
