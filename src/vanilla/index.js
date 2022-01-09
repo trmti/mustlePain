@@ -11,7 +11,11 @@ document.getElementById('btn-submit').addEventListener('click', () => {
   const trainDays = Array.from(checkboxes).filter(
     (checkbox) => checkbox.checked === true
   );
-  setTrainDay(db, groupId, trainDays);
+  setTrainDay(
+    db,
+    groupId,
+    trainDays.map((trainDay) => trainDay.value)
+  );
   setTrainTime(db, groupId, document.getElementById('input-time').value);
   document.getElementById('debug').innerText = groupId + ' ' + trainDays;
 });
