@@ -14,7 +14,7 @@ document.getElementById('btn-submit').addEventListener('click', () => {
     trainDays.map((trainDay) => trainDay.value)
   );
   setTrainTime(db, groupId, document.getElementById('input-time').value);
-  document.getElementById('debug').innerText = groupId + ' ' + trainDays;
+  liff.closeWindow();
 });
 
 document.addEventListener('DOMContentLoaded', function () {
