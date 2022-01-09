@@ -8,6 +8,7 @@ document.getElementById('btn-submit').addEventListener('click', () => {
   const trainDays = checkboxes.map((checkbox) => checkbox.checked === true);
   setTrainigDay(db, groupId, trainDays);
   setTrainingTime(db, groupId, document.time.value);
+  liff.closeWindow();
 });
 
 document.addEventListener('DOMContentLoaded', function () {
