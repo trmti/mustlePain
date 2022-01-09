@@ -3,6 +3,7 @@ import liff from '@line/liff';
 import { db, setTrainDay, setTrainTime } from './firebase';
 
 document.getElementById('btn-submit').addEventListener('click', () => {
+  console.log('ikko');
   checkboxes = document.getElementsByClassName('trainingDay-checkbox');
   const groupId = liff.getContext().groupId;
   const trainDays = checkboxes.filter((checkbox) => checkbox.checked === true);
