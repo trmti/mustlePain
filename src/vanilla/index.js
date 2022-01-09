@@ -1,22 +1,19 @@
 import './index.css';
 import liff from '@line/liff';
-import { db, setTrainDay, setTrainTime } from './firebase';
-
-setTrainTime(db, 'test', '09:00');
+import { db, setTrainDayAndTime } from './firebase';
 
 document.getElementById('btn-submit').addEventListener('click', () => {
-  console.log('ikko');
   const checkboxes = document.getElementsByClassName('trainingDay-checkbox');
   const groupId = liff.getContext().groupId;
   const trainDays = Array.from(checkboxes).filter(
     (checkbox) => checkbox.checked === true
   );
-  setTrainDay(
+  setTrainDayAndTime(
     db,
     groupId,
-    trainDays.map((trainDay) => trainDay.value)
+    trainDays.map((trainDay) => trainDay.value),
+    document.getElementById('input-time').value
   );
-  setTrainTime(db, groupId, document.getElementById('input-time').value);
   document.getElementById('debug').innerText = groupId + ' ' + trainDays;
 });
 
