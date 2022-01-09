@@ -8,12 +8,25 @@ document.getElementById('btn-submit').addEventListener('click', () => {
   const trainDays = Array.from(checkboxes).filter(
     (checkbox) => checkbox.checked === true
   );
-  setTrainDay(
-    db,
-    groupId,
-    trainDays.map((trainDay) => trainDay.value)
-  );
-  setTrainTime(db, groupId, document.getElementById('input-time').value);
+  const trainDaysVal = trainDays.map((trainDay) => trainDay.value);
+  const trainTime = document.getElementById('input-time').value;
+  setTrainDay(db, groupId, trainDaysVal);
+  setTrainTime(db, groupId, trainTime);
+  liff
+    .sendMessages([
+      {
+        type: 'text',
+        text:
+          '絶対に' +
+          trainDaysVal.join(',') +
+          'の' +
+          trainTime +
+          'から筋トレする！！',
+      },
+    ])
+    .catch((err) => {
+      console.log('error', err);
+    });
   liff.closeWindow();
 });
 
