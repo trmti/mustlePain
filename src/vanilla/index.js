@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log(userId);
       const isLoggedIn = liff.isLoggedIn();
       console.log(isLoggedIn);
-      document.getElementById('userId').innerText = isLoggedIn;
+      document.getElementById('userId').innerText = isLoggedIn
+        ? 'true'
+        : 'false';
     })
     .catch((error) => {
       console.log(error);
