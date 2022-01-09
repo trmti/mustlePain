@@ -35,10 +35,12 @@ export async function setTrainDay(db, groupId, trainDayArray) {
   await setDoc(doc(db, 'group', groupId), {
     TrainingDay: trainDayArray,
   });
+  console.log('setTrainday completed successfully');
 }
 
 export async function setTrainTime(db, groupId, trainTime) {
   await setDoc(doc(db, 'group', groupId), {
     TrainTime: trainTime,
   });
+  console.log('setTrainTime completed successfully');
 }
