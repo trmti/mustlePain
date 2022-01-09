@@ -1,6 +1,6 @@
 import './index.css';
 import liff from '@line/liff';
-import { db, setTrainDayAndTime } from './firebase';
+import { db, setTrainDay, setTrainTime } from './firebase';
 
 document.getElementById('btn-submit').addEventListener('click', () => {
   const checkboxes = document.getElementsByClassName('trainingDay-checkbox');
@@ -8,12 +8,12 @@ document.getElementById('btn-submit').addEventListener('click', () => {
   const trainDays = Array.from(checkboxes).filter(
     (checkbox) => checkbox.checked === true
   );
-  setTrainDayAndTime(
+  setTrainDay(
     db,
     groupId,
-    trainDays.map((trainDay) => trainDay.value),
-    document.getElementById('input-time').value
+    trainDays.map((trainDay) => trainDay.value)
   );
+  setTrainTime(db, groupId, document.getElementById('input-time').value);
   document.getElementById('debug').innerText = groupId + ' ' + trainDays;
 });
 

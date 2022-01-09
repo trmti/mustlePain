@@ -32,15 +32,23 @@ export async function getGroup(db) {
 }
 
 export async function setTrainDay(db, groupId, trainDayArray) {
-  await setDoc(doc(db, 'group', groupId), {
-    TrainingDay: trainDayArray,
-  });
+  await setDoc(
+    doc(db, 'group', groupId),
+    {
+      TrainingDay: trainDayArray,
+    },
+    { merge: true }
+  );
   console.log('setTrainday completed successfully');
 }
 
 export async function setTrainTime(db, groupId, trainTime) {
-  await setDoc(doc(db, 'group', groupId), {
-    TrainTime: trainTime,
-  });
+  await setDoc(
+    doc(db, 'group', groupId),
+    {
+      TrainTime: trainTime,
+    },
+    { merge: true }
+  );
   console.log('setTrainTime completed successfully');
 }
