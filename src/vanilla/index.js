@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .init({ liffId: process.env.LIFF_ID })
     .then(() => {
       const userId = liff.getContext().userId;
+      console.log(userId);
       document.getElementById('user-id').innerText = userId;
     })
     .catch((error) => {
