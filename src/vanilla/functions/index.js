@@ -1,5 +1,6 @@
 const { utcToZonedTime } = require('date-fns-tz');
 const { format } = require('date-fns');
+const request = require('request');
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 
@@ -26,7 +27,15 @@ exports.sendReminder = functions
       .get();
     const remindedGroupIds = remindersRef.docs.map((doc) => doc.id);
     if (remindedGroupIds.length > 0) {
-      // TODO getアクション
+      request(
+        {
+          url: `https://line-chat-bot-ikko.herokuapp.com/group/notice/${remindedGroupIds}`,
+          method: 'GET',
+        },
+        function (error, response, body) {
+          console.log(body);
+        }
+      );
       console.log('リマインダー実行', remindedGroupIds);
       return 'リマインダーがあります';
     }
