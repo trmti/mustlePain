@@ -33,7 +33,7 @@ exports.sendReminder = functions
           method: 'GET',
         },
         function (error, response, body) {
-          console.log(body);
+          console.log('メッセージ送信');
         }
       );
       console.log('リマインダー実行', remindedGroupIds);
