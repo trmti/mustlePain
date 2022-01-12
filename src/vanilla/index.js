@@ -28,7 +28,7 @@ document.getElementById('btn-submit').addEventListener('click', () => {
       console.log('error', err);
     });
   document.getElementById('debug').innerText = trainDaysVal + trainTime;
-  // liff.closeWindow();
+  liff.closeWindow();
 });
 
 document.addEventListener('DOMContentLoaded', function () {
